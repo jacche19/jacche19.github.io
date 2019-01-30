@@ -1,6 +1,6 @@
 var arrQty = [""];
 var arrName = [""];
-var table = document.getElementById('checkT');
+var check = document.getElementById('checkT');
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -26,7 +26,7 @@ function order0() {
   var qty0 = document.createTextNode(num0);
   var newTr = document.createElement('tr');
   var box0 = newTr.appendChild(newTdA);
-  var tableQty0 = table.appendChild(box0);
+  var tableQty0 = check.appendChild(box0);
 }
 
 var previous = null;
