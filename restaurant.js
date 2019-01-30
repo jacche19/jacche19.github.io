@@ -1,5 +1,6 @@
 var arrQty = [""];
 var arrName = [""];
+var table = document.getElementById('checkT');
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -21,10 +22,11 @@ function order0() {
   localStorage.setItem("total0", total0);
   window.alert(total0);
   //adds to check on webpage
-  var newTr = document.createElement('tr');
   var newTdA = document.createElement('td');
   var qty0 = document.createTextNode(num0);
-  var tableQty0 = newTr.appendChild(newTdA).appendChild(qty0);
+  var newTr = document.createElement('tr');
+  var box0 = newTr.appendChild(newTdA);
+  var tableQty0 = table.appendChild(box0);
 }
 
 var previous = null;
