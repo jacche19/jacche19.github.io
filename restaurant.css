@@ -1,6 +1,18 @@
+/*
+font-family: 'Major Mono Display', monospace;
+font-family: 'Homemade Apple', cursive;
+font-family: 'KoHo', sans-serif;
+*/
+
+#body {
+  font-size: 30px;
+}
+
 #head {
-    background-color: red;
-    margin: 0;
+  background-color: red;
+  margin: 0;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 30px;
 }
 
 #photo0, #photo1, #photo2, #photo3, #photo4, #photo5 {
@@ -14,6 +26,11 @@
   margin: 20px;
   padding: 0;
   float: left;
+}
+
+.name {
+  font-family: monospace;
+  font-size: 30px;
 }
 
 .name, .price, .s {

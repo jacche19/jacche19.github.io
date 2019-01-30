@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="restaurant.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=KoHo|Major+Mono+Display" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div id="head">
+      <h1>BRUNCH MENU</h1>
+    </div>
+    
+    <div id="items">
+      
+      <div id="item1">
+        <div id="photo0"></div>
+        <div id="info0">
+          <p class="name">BUTTERMILK PANCAKES: </p>
+          <p class="price">$12</p>
+          <hr>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="qty">
+            <p class="qty_title">Quantity: </p>
+            <input id="counter0" type="number" min="1" max="5">
+            <button class="order" onclick="order0()">ORDER</button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="item1">
+        <div id="photo1"></div>
+        <div id="info1">
+          <p class="name">BUTTERMILK PANCAKES</p>
+          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          
+        </div>
+      </div>
+      
+      <div id="item2"></div>
+      
+      <div id="item3"></div>
+      
+      <div id="item4"></div>
+      
+      <div id="item5"></div>
+      
+    </div>
+    
+    <div id="check">
+      <table>
+        <tr>
+          <th>quantity</th>
+          <th>item</th>
+          <th>price</th>
+        </tr>
+      </table>
+    </div>
+    
+    <script src="restaurant.js"></script>
+    
+  </body>
+</html>
