@@ -1,0 +1,42 @@
+#head {
+    background-color: red;
+    margin: 0;
+}
+
+#photo0, #photo1, #photo2, #photo3, #photo4, #photo5 {
+  height: 45vh;
+  width: 45vh;
+  background-color: yellow;
+}
+#item0, #item1, #item2, #item3, #item4, #item5 {
+  background-color: blue;
+  width: 45vh;
+  margin: 20px;
+  padding: 0;
+  float: left;
+}
+
+.name, .price, .s {
+  font-size: 25px;
+  display: inline;
+}
+
+.order {
+  margin-left: 10px;
+}
+
+.qty_title, #counter0, #counter2, #counter3, #counter4, #counter5 {
+  display: inline;
+}
+
+#check{
+  background-color: purple;
+  position: relative;
+  float: right;
+  height: 100vh;
+  margin: 0;
+}
+
+#info0,#info1, #info2, #info3, #info4, #info5 {
+  padding: 10px;
+}
