@@ -1,6 +1,12 @@
-var arrQty = [""];
-var arrName = [""];
-var check = document.getElementById('checkT');
+var arrQty = [];
+var arrName = [];
+var arrPrice = [];
+var $ = document;
+
+var check = $.getElementById('checkT');
+
+
+//getting JSON file
 
 var xmlhttp = new XMLHttpRequest();
 
@@ -12,6 +18,27 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open("GET", "restaurant.json", true);
 xmlhttp.send();
+
+//appending JSON names into HTML (setting up website names and buttons)
+
+for (var i = 0; i < mydata.food.length; i++) {
+  //Item name
+  arrName.push(mydata.food[i].name);
+  var htmlName = $.getElementsByClassName('name')[i].innerHTML;
+  var jsonName = $.createTextNode(arrName[i]);
+  htmlName.appendChild(jsonName);
+  
+  
+  arrPrice.push(mydata.food[i].price);
+}
+
+
+
+
+
+
+
+
 
 function order0() {
   var num0 = document.getElementById("counter0").value;
