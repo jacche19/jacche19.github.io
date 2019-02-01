@@ -4,8 +4,12 @@ font-family: 'Homemade Apple', cursive;
 font-family: 'KoHo', sans-serif;
 */
 
-#body {
-  font-size: 30px;
+body {
+  background-image: url('wood.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 #head {
@@ -19,6 +23,7 @@ font-family: 'KoHo', sans-serif;
   height: 45vh;
   width: 45vh;
   background-color: yellow;
+  border-radius: 30px;
 }
 #item0, #item1, #item2, #item3, #item4, #item5 {
   background-color: blue;
@@ -26,6 +31,7 @@ font-family: 'KoHo', sans-serif;
   margin: 20px;
   padding: 0;
   float: left;
+  border-radius: 20px;
 }
 
 .name {

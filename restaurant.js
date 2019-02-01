@@ -22,14 +22,25 @@ xmlhttp.send();
 //appending JSON names into HTML (setting up website names and buttons)
 
 for (var i = 0; i < mydata.food.length; i++) {
+  
   //Item name
   arrName.push(mydata.food[i].name);
   var htmlName = $.getElementsByClassName('name')[i].innerHTML;
   var jsonName = $.createTextNode(arrName[i]);
   htmlName.appendChild(jsonName);
   
-  
+  //Price
   arrPrice.push(mydata.food[i].price);
+  var htmlPrice = $.getElementsByClassName('price')[i].innerHTML;
+  var jsonPrice = $.createTextNode(arrPrice[i]);
+  htmlPrice.appendChild(jsonPrice);
+  
+  //Description
+  arrDes.push(mydata.food[i].des);
+  var htmlDes = $.getElementsByClassName('description')[i].innerHTML;
+  var jsonDes = $.createTextNode(arrDes[i]);
+  htmlDes.appendChild(jsonDes);
+
 }
 
 
