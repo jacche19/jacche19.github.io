@@ -51,7 +51,7 @@ for (var i = 0; i < mydata.food.length; i++) {
 
 
 
-function order0() {
+function order() {
   var num0 = document.getElementById("counter0").value;
   arrQty.push(num0);
   var price0 = mydata.food[0].price;
