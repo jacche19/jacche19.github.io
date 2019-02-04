@@ -2,6 +2,7 @@ var arrQty = [];
 var arrName = [];
 var arrPrice = [];
 var $ = document;
+var row = 0;
 
 var check = $.getElementById('checkT');
 
@@ -15,7 +16,6 @@ xmlhttp.onreadystatechange = function() {
   }
 };
 
-var mydata = JSON.parse(this.responseText);
 xmlhttp.open("GET", "restaurant.json", true);
 xmlhttp.send();
 
@@ -43,28 +43,25 @@ for (var i = 0; i < mydata.food.length; i++) {
 
 }
 
+var b;
 
-
-
-
-
-
+function order0() {
+  b = 0;
+  order();
+}
 
 
 function order() {
-  var num0 = document.getElementById("counter0").value;
-  arrQty.push(num0);
-  var price0 = mydata.food[0].price;
-  window.alert(price0);
-  var total0 = num0 * price0;
-  localStorage.setItem("total0", total0);
-  window.alert(total0);
-  //adds to check on webpage
-  var newTdA = document.createElement('td');
-  var qty0 = document.createTextNode(num0);
-  var newTr = document.createElement('tr');
-  var box0 = newTr.appendChild(newTdA);
-  var tableQty0 = check.appendChild(box0);
+  //add qty to array
+  var qty = $.getElementsByClassName("counter")[b].value;
+  arrQty.push(qty);
+  
+  //add qty from array to table
+  var qty_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[0];
+  qty_table.innerHTML = arrQty[b];
+  
+
+  row++;
 }
 
 var previous = null;

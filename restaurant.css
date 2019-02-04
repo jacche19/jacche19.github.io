@@ -9,11 +9,11 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: 'Major Mono Display', monospace;
 }
 
 #head {
   margin: 5px 0 0 0;
-  font-family: 'Major Mono Display', monospace;
   font-size: 40px;
   text-align: center;
   color: #F2E7C9;
@@ -21,10 +21,9 @@ body {
 }
 
 #items {
-  background-color: blue;
-  height: -webkit-fill-available;
-  width: 70vw;
-  padding: auto;
+  margin-left: 20px;
+  height: 100vh;
+  width: 75vw;
 }
 
 #photo0, #photo1, #photo2, #photo3, #photo4, #photo5 {
@@ -44,13 +43,11 @@ body {
 }
 
 .name {
-  font-family: monospace;
   font-size: 30px;
 }
 
 .qty_title {
   display: inline;
-  font-family: 'Major Mono Display', monospace;
 }
 
 .name, .price {
@@ -72,7 +69,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   right: 20px;
-  height: 60vh;
+  height: 40vh;
   margin: 0;
   width: 27vh;
   padding: 30px;
@@ -87,6 +84,45 @@ body {
   width: 100%;
 }
 
-th, td {
+th, td, tr {
   border: 1px solid black;
+  padding: 5px 2px;
+  text-align: center;
+}
+
+th {
+  background-color: #3E463E;
+  color: #F2E7C9;
+}
+
+tr {
+  height: 30px;
+}
+
+#tax_title {
+  text-align: right;
+  padding-right: 15px;
+}
+
+#total_row {
+  height: 50px;
+}
+
+button {
+  background-color: #ABC9C2;
+  color: #3E463E;
+  padding: 5px;
+  border: 1px solid #3E463E;
+  font-family: 'Major Mono Display', monospace;
+}
+
+button:hover {
+  background-color: #3E463E;
+  color: #ABC9C2;
+  border: 1px solid #3E463E;
+}
+
+.counter {
+  margin: 0;
+  width: 50px;
 }
