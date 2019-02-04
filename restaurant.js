@@ -37,9 +37,9 @@ for (var i = 0; i < mydata.food.length; i++) {
   
   //Item name
   arrName.push(mydata.food[i].name);
-  var htmlName = $.getElementsByClassName('name')[i].innerHTML;
+  var htmlName = $.getElementsByClassName('name')[i];
   var jsonName = arrName[i];
-  htmlName = jsonName;
+  htmlName.innerHTML = jsonName;
 
   /*
   //Price
