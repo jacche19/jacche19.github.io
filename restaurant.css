@@ -1,6 +1,6 @@
 /*
 font-family: 'Major Mono Display', monospace;
-font-family: 'KoHo', sans-serif;
+font-family: 'Mr Dafoe', cursive;
 */
 
 * {
@@ -14,17 +14,6 @@ body {
   background-position: center;
   background-size: cover;
   font-family: 'Major Mono Display', monospace;
-}
-
-#head {
-  margin: 0px;
-  padding: 0;
-  font-size: 40px;
-  text-align: center;
-  color: #F2E7C9;
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
-  font-family: 'Mr Dafoe', cursive;
-  background-color: #3E463E
 }
 
 #items {
@@ -104,7 +93,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   right: 20px;
-  height: 40vh;
+  height: 450px;
   margin: 0;
   width: 27vh;
   padding: 30px;
@@ -159,10 +148,28 @@ button {
 button:hover {
   background-color: #3E463E;
   color: #ABC9C2;
-  border: 1px solid #3E463E;
 }
 
 .counter {
   margin: 0;
   width: 50px;
+}
+
+#finalize {
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: #F2E7C9;
+  color: #3E463E;
+  border: 2px solid #3E463E;
+}
+
+#finalize:hover {
+  background-color: #3E463E;
+  color: #F2E7C9;
+}
+
+#table_head {
+  font-family: 'Mr Dafoe', cursive;
+  color: #3E463E;
+  font-size: 40px;
 }

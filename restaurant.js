@@ -6,8 +6,6 @@ var row = 0;
 
 var check = $.getElementById('checkT');
 
-/*
-
 //getting JSON file
 
 var xmlhttp = new XMLHttpRequest();
@@ -21,8 +19,7 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "restaurant.json", true);
 xmlhttp.send();
 
-*/
-
+/*
 var jsonText = '{"food" : [' +
     '{"name": "Buttermilk Pancakes", "price": 8, "des": "Three large buttermilk pancakes. Comes with maple syrup and pads of butter."},' +
     '{"name": "Chicken & Waffles", "price": 15, "des": "Two fluffy waffles, covered in maple syrup and three pieces of freshly fried chicken."},' +
@@ -32,7 +29,7 @@ var jsonText = '{"food" : [' +
     '{"name": "Eggs Benedict", "price": 9, "des": "An English muffin topped with Canadian bacon, a poached egg, and house-made hollandaise sauce."} ]}';
 
 var mydata = JSON.parse(jsonText);
-
+*/
 
 //appending JSON names into HTML (setting up website names and buttons)
 
