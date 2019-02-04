@@ -6,6 +6,8 @@ var row = 0;
 
 var check = $.getElementById('checkT');
 
+/*
+
 //getting JSON file
 
 var xmlhttp = new XMLHttpRequest();
@@ -19,6 +21,19 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", "restaurant.json", true);
 xmlhttp.send();
 
+*/
+
+var jsonText = '{"food" : [' +
+    '{"name": "Buttermilk Pancakes", "price": 8, "des": "Three large buttermilk pancakes. Comes with maple syrup and pads of butter."},' +
+    '{"name": "Chicken & Waffles", "price": 15, "des": "Two fluffy waffles, covered in maple syrup and three pieces of freshly fried chicken."},' +
+    '{"name": "Cheese, Mushroom, and Bacon Omelette", "price": 7, "des": "Three farm-fresh eggs scrambled. Mixed with provolone cheese, chopped portobello mushrooms, and applewood-smoked bacon."},' +
+    '{"name": "French Toast with Assorted Fruits", "price": "12", "des": "Two thick pieces of french toast covered in powdered sugar and maple syrup. Topped with strawberries, blueberries, and bananas."},' +
+    '{"name": "Avocado Toast", "price": 10, "des": "Two pieces of toasted whole-wheat bread. Topped with mashed avocado with smoked paprika and a soft-boiled egg."},' +
+    '{"name": "Eggs Benedict", "price": 9, "des": "An English muffin topped with Canadian bacon, a poached egg, and house-made hollandaise sauce."} ]}';
+
+var mydata = JSON.parse(jsonText);
+
+
 //appending JSON names into HTML (setting up website names and buttons)
 
 for (var i = 0; i < mydata.food.length; i++) {
@@ -26,9 +41,10 @@ for (var i = 0; i < mydata.food.length; i++) {
   //Item name
   arrName.push(mydata.food[i].name);
   var htmlName = $.getElementsByClassName('name')[i].innerHTML;
-  var jsonName = $.createTextNode(arrName[i]);
-  htmlName.appendChild(jsonName);
-  
+  var jsonName = arrName[i];
+  htmlName = jsonName;
+
+  /*
   //Price
   arrPrice.push(mydata.food[i].price);
   var htmlPrice = $.getElementsByClassName('price')[i].innerHTML;
@@ -40,7 +56,7 @@ for (var i = 0; i < mydata.food.length; i++) {
   var htmlDes = $.getElementsByClassName('description')[i].innerHTML;
   var jsonDes = $.createTextNode(arrDes[i]);
   htmlDes.appendChild(jsonDes);
-
+*/
 }
 
 var b;
@@ -64,9 +80,10 @@ function order() {
   row++;
 }
 
+/*
 var previous = null;
 var current = null;
-setIntercal(function(){
+setInterval(function(){
   $.getJSON("restaurant.json", function(json){
     current = JSON.stringify(json);
     if (previous && current & previous != current) {
@@ -75,3 +92,4 @@ setIntercal(function(){
     previous = current;
   });
 }, 2000);
+*/

@@ -2,170 +2,174 @@
   <head>
     <link rel="stylesheet" href="restaurant.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=KoHo|Major+Mono+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Mr+Dafoe" rel="stylesheet">
   </head>
   <body>
     
     <div id="block"></div>
 
     <div id="head">
-      <h1>brunch menu</h1>
+      <h1>Brunch Menu</h1>
     </div>
-    
-    <div id="check">
-        <table id="check_table">
-          <tr>
-            <th>qty</th>
-            <th>item</th>
-            <th>price</th>
-          </tr>
-          
-          <tr class="row"> <!--0-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+     
+    <div id="not_head">
 
-          <tr class="row"> <!--1-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+      <div id="check">
 
-          <tr class="row"> <!--2-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+          <table id="check_table">
+            <tr>
+              <th>qty</th>
+              <th>item</th>
+              <th>price</th>
+            </tr>
+            
+            <tr class="row"> <!--0-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
 
-          <tr class="row"> <!--3-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+            <tr class="row"> <!--1-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
 
-          <tr class="row"> <!--4-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+            <tr class="row"> <!--2-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
 
-          <tr class="row"> <!--5-->
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr> 
+            <tr class="row"> <!--3-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
 
-          <tr>
-            <th colspan="2">subtotal</th>
-            <td id="subtotal"></td>
-          </tr>
+            <tr class="row"> <!--4-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
 
-          <tr>
-            <td colspan="2" id="tax_title">tax</td>
-            <td id="tax"></td>
-          </tr>
+            <tr class="row"> <!--5-->
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr> 
 
-          <tr id="total_row">
-            <th colspan="2">total</th>
-            <td id="total"></td>
-          </tr>
+            <tr>
+              <th colspan="2">subtotal</th>
+              <td id="subtotal"></td>
+            </tr>
 
-        </table>
-      </div>
+            <tr>
+              <td colspan="2" id="tax_title">tax</td>
+              <td id="tax"></td>
+            </tr>
 
-    <div id="items">
+            <tr id="total_row">
+              <th colspan="2">total</th>
+              <td id="total"></td>
+            </tr>
 
-      <div id="item0">
-        <div id="photo0"></div>
-        <div id="info0">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order0()">order</button>
+          </table>
+        </div>
+
+      <div id="items">
+
+        <div id="item0">
+          <div id="photo0"></div>
+          <div id="info0">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order0()">order</button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div id="item1">
-        <div id="photo1"></div>
-        <div id="info1">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order1()">order</button>
+        
+        <div id="item1">
+          <div id="photo1"></div>
+          <div id="info1">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order1()">order</button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div id="item2">
-        <div id="photo2"></div>
-        <div id="info2">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order2()">order</button>
+        
+        <div id="item2">
+          <div id="photo2"></div>
+          <div id="info2">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order2()">order</button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div id="item3">
-        <div id="photo3"></div>
-        <div id="info3">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order3()">order</button>
+        
+        <div id="item3">
+          <div id="photo3"></div>
+          <div id="info3">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order3()">order</button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div id="item4">
-        <div id="photo4"></div>
-        <div id="info4">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order4()">order</button>
+        
+        <div id="item4">
+          <div id="photo4"></div>
+          <div id="info4">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order4()">order</button>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div id="item5">
-        <div id="photo5"></div>
-        <div id="info5">
-          <p class="name"></p>
-          <p class="price"></p>
-          <hr>
-          <p class="description"></p>
-          <div class="qty">
-            <p class="qty_title">quantity: </p>
-            <input class="counter" type="number" min="1" max="5">
-            <button class="order" onclick="order5()">order</button>
+        
+        <div id="item5">
+          <div id="photo5"></div>
+          <div id="info5">
+            <p class="name"></p>
+            <p class="price"></p>
+            <hr>
+            <p class="description"></p>
+            <div class="qty">
+              <p class="qty_title">quantity: </p>
+              <input class="counter" type="number" min="1" max="5">
+              <button class="order" onclick="order5()">order</button>
+            </div>
           </div>
         </div>
+        
       </div>
-      
     </div>
 
     <script src="restaurant.js"></script>
