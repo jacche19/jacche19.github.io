@@ -7,8 +7,6 @@ var check = $.getElementById('checkT');
 
 //getting JSON file
 
-/*
-
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.onreadystatechange = function() {
@@ -16,8 +14,6 @@ xmlhttp.onreadystatechange = function() {
     var mydata = JSON.parse(this.responseText);
   }
 };
-
-*/
 
 var mydata = JSON.parse(this.responseText);
 xmlhttp.open("GET", "restaurant.json", true);
