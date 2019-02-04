@@ -5,6 +5,8 @@
 </head>
 
 <body>
+    <div id="container">
+    <div id="check_final">
     <table id="final_table">
         <tr id="row">
             <th>qty</th>
@@ -12,6 +14,21 @@
             <th>price</th>
         </tr>
         <tr id="row">
+                <td></td>
+                <td></td>
+                <td></td>
+        </tr>
+        <tr id="row">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="row">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="row">
             <td></td>
             <td></td>
             <td></td>
@@ -25,29 +42,39 @@
             <td></td>
             <td></td>
             <td></td>
-        </tr>
-        <tr id="row">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-        </tr>
-        <tr id="row">
-                    <td></td>
-                    <td></td>
-                    <td></td>
         </tr>
 
     </table> 
+</div>
+</div>
+
 </body>
     
 <script>
 
-var qty = 
+var retrievedQty = localStorage.getItem("qty");
+var qty = JSON.parse(retrievedQty);
+
+var retrievedName = localStorage.getItem("name");
+var qty = JSON.parse(retrievedQty);
+
+var retrievedPrice = localStorage.getItem("price");
+var price = JSON.parse(retrievedPrice);
 
 function show(){
 
-for (var i = 0; i < 6; i++) {
+for (var i = 0; i < arrName.length; i++) {
+  //add qty from array to table
+  var qty_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[0];
+  qty_table.innerHTML = arrQty[b];
 
+  //add name from array to table
+  var name_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[1];
+  name_table.innerHTML = arrName[b];
+
+  //add price from array to table
+  var price_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[2];
+  price_table.innerHTML = arrPrice[b];
 }
 
 show();

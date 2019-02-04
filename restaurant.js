@@ -1,11 +1,33 @@
 var arrQty = [];
 var arrName = [];
 var arrPrice = [];
+
+var name = [
+  "pancakes",
+  "ckn & waf",
+  "omelette",
+  "fr toast",
+  "avo toast",
+  "eggs ben"
+];
+
+var price = [
+  8,
+  15,
+  7,
+  12,
+  10,
+  9
+];
 var $ = document;
 var row = 0;
 
+
+
 var check = $.getElementById('checkT');
 
+
+/*
 //getting JSON file
 
 var xmlhttp = new XMLHttpRequest();
@@ -18,6 +40,7 @@ xmlhttp.onreadystatechange = function() {
 
 xmlhttp.open("GET", "restaurant.json", true);
 xmlhttp.send();
+*/
 
 /*
 var jsonText = '{"food" : [' +
@@ -31,6 +54,7 @@ var jsonText = '{"food" : [' +
 var mydata = JSON.parse(jsonText);
 */
 
+/*
 //appending JSON names into HTML (setting up website names and buttons)
 
 for (var i = 0; i < mydata.food.length; i++) {
@@ -41,7 +65,6 @@ for (var i = 0; i < mydata.food.length; i++) {
   var jsonName = arrName[i];
   htmlName.innerHTML = jsonName;
 
-  /*
   //Price
   arrPrice.push(mydata.food[i].price);
   var htmlPrice = $.getElementsByClassName('price')[i].innerHTML;
@@ -53,16 +76,11 @@ for (var i = 0; i < mydata.food.length; i++) {
   var htmlDes = $.getElementsByClassName('description')[i].innerHTML;
   var jsonDes = $.createTextNode(arrDes[i]);
   htmlDes.appendChild(jsonDes);
-*/
+  
 }
+*/
 
 var b;
-
-function order0() {
-  b = 0;
-  order();
-}
-
 
 function order() {
   //add qty to array
@@ -72,9 +90,59 @@ function order() {
   //add qty from array to table
   var qty_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[0];
   qty_table.innerHTML = arrQty[b];
-  
+
+  //get name and add to arrName
+  arrName.push(c);
+
+  //add name from array to table
+  var name_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[1];
+  name_table.innerHTML = arrName[b];
+
+  //get price and add to arrPrice
+  var item_price = "$" + (price[b] * qty);
+  arrPrice.push(item_price);
+
+  //add price from array to table
+  var price_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[2];
+  price_table.innerHTML = arrPrice[b];
 
   row++;
+}
+
+function order0() {
+  b = 0;
+  c = "pancakes";
+  order();
+}
+
+function order1() {
+  b = 1;
+  c = "chk & waf";
+  order();
+}
+
+function order2() {
+  b = 2;
+  order();
+  c = "omelette";
+}
+
+function order3() {
+  b = 3;
+  c = "fr toast";
+  order();
+}
+
+function order4() {
+  b = 4;
+  c = "avo toast";
+  order();
+}
+
+function order5() {
+  b = 5;
+  c = "eggs ben";
+  order();
 }
 
 /*
@@ -90,3 +158,10 @@ setInterval(function(){
   });
 }, 2000);
 */
+
+function finalize() {
+  localStorage.setItem("qty", JSON.stringify(arrQty));
+  localStorage.setItem("name", JSON.stringify(arrName));
+  localStorage.setItem("price", JSON.stringify(arrPrice));
+  window.location.href = "page2.html";
+}

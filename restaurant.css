@@ -14,6 +14,7 @@ body {
   background-position: center;
   background-size: cover;
   font-family: 'Major Mono Display', monospace;
+  text-transform: lowercase;
 }
 
 #items {
@@ -87,16 +88,30 @@ body {
   display: inline;
 }
 
-#check {
+#check, #check_final {
   background-color: #F2E7C9;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   right: 20px;
   height: 450px;
-  margin: 0;
   width: 27vh;
   padding: 30px;
+}
+
+#check {
+  margin: 0;
+}
+
+#check_final {
+  margin: auto;
+  position: static;
+}
+
+#container {
+  background-color: blue;
+  width: 100vw;
+  height: 100vh;
 }
 
 #info0, #info1, #info2, #info3, #info4, #info5 {
@@ -108,7 +123,7 @@ body {
   margin-top: 20px;
 }
 
-#check_table {
+table {
   border-collapse: collapse;
   width: 100%;
 }
