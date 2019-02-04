@@ -1,6 +1,5 @@
 /*
 font-family: 'Major Mono Display', monospace;
-font-family: 'Homemade Apple', cursive;
 font-family: 'KoHo', sans-serif;
 */
 
@@ -13,25 +12,35 @@ body {
 }
 
 #head {
-  background-color: red;
-  margin: 0;
+  margin: 5px 0 0 0;
   font-family: 'Major Mono Display', monospace;
-  font-size: 30px;
+  font-size: 40px;
+  text-align: center;
+  color: #F2E7C9;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+#items {
+  background-color: blue;
+  height: -webkit-fill-available;
+  width: 70vw;
+  padding: auto;
 }
 
 #photo0, #photo1, #photo2, #photo3, #photo4, #photo5 {
   height: 45vh;
-  width: 45vh;
+  width: 35vh;
   background-color: yellow;
-  border-radius: 30px;
 }
+
 #item0, #item1, #item2, #item3, #item4, #item5 {
-  background-color: blue;
-  width: 45vh;
-  margin: 20px;
+  background-color: #ABC9C2;
+  width: 35vh;
+  margin: 0 20px 40px;
   padding: 0;
   float: left;
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .name {
@@ -39,7 +48,12 @@ body {
   font-size: 30px;
 }
 
-.name, .price, .s {
+.qty_title {
+  display: inline;
+  font-family: 'Major Mono Display', monospace;
+}
+
+.name, .price {
   font-size: 25px;
   display: inline;
 }
@@ -48,18 +62,31 @@ body {
   margin-left: 10px;
 }
 
-.qty_title, #counter0, #counter2, #counter3, #counter4, #counter5 {
+.counter {
   display: inline;
 }
 
-#check{
-  background-color: purple;
-  position: relative;
-  float: right;
-  height: 100vh;
+#check {
+  background-color: #F2E7C9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  right: 20px;
+  height: 60vh;
   margin: 0;
+  width: 27vh;
+  padding: 30px;
 }
 
 #info0, #info1, #info2, #info3, #info4, #info5 {
   padding: 10px;
+}
+
+#check_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
 }

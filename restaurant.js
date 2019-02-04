@@ -5,7 +5,6 @@ var $ = document;
 
 var check = $.getElementById('checkT');
 
-
 //getting JSON file
 
 /*
