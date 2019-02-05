@@ -81,50 +81,84 @@ for (var i = 0; i < mydata.food.length; i++) {
 */
 
 var b;
+var arrSum = 0;
+var sub;
+var tax;
+var total;
 
 function order() {
-  //add qty to array
   var qty = $.getElementsByClassName("counter")[b].value;
+
+  if (qty >= 1 && qty <=5) {
+
+  //add qty to array
   arrQty.push(qty);
   
   //add qty from array to table
-  var qty_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[0];
-  qty_table.innerHTML = arrQty[b];
+  var qty_table = $.getElementsByClassName("row")[row].getElementsByTagName('td')[0];
+  qty_table.innerHTML = arrQty[arrQty.length - 1];
 
   //get name and add to arrName
   arrName.push(c);
 
   //add name from array to table
-  var name_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[1];
-  name_table.innerHTML = arrName[b];
+  var name_table = $.getElementsByClassName("row")[row].getElementsByTagName('td')[1];
+  name_table.innerHTML = arrName[arrQty.length - 1];
 
   //get price and add to arrPrice
-  var item_price = "$" + (price[b] * qty);
+  var item_price = price[b] * qty;
   arrPrice.push(item_price);
 
   //add price from array to table
-  var price_table = $.getElementsByClassName("row")[b].getElementsByTagName('td')[2];
-  price_table.innerHTML = arrPrice[b];
+  var price_table = $.getElementsByClassName("row")[row].getElementsByTagName('td')[2];
+  price_table.innerHTML = "$" + arrPrice[arrQty.length - 1];
 
+  //disable button and imput box
+  $.getElementsByClassName("counter")[b].disabled = true;
+  var buttonStyle = $.getElementsByClassName("order")[b].style;
+  buttonStyle.backgroundColor = "#3E463E";
+  buttonStyle.color = "#F2E7C9";
+  $.getElementsByClassName("order")[b].innerHTML = "ordered";
+  
   row++;
+  
+  //subtotal
+  arrSum += item_price;
+  var subtotal_table = $.getElementById("subtotal");
+  subtotal_table.innerHTML = "$" + arrSum;
+  
+  //tax
+  var tax = (arrSum * 0.04712).toFixed(2);
+  var tax_table = $.getElementById("tax");
+  tax_table.innerHTML = "$" + tax;
+  }
+
+  //total
+  var total = arrSum + parseFloat(tax);
+  var total_table = $.getElementById("total");
+  total_table.innerHTML = "$" + total;
 }
 
 function order0() {
   b = 0;
   c = "pancakes";
   order();
+  b = null;
+  c = "";
 }
 
 function order1() {
   b = 1;
-  c = "chk & waf";
+  c = "c & w";
   order();
+  b = null;
+  c = "";
 }
 
 function order2() {
   b = 2;
-  order();
   c = "omelette";
+  order();
 }
 
 function order3() {
@@ -135,7 +169,7 @@ function order3() {
 
 function order4() {
   b = 4;
-  c = "avo toast";
+  c = "av toast";
   order();
 }
 
@@ -163,5 +197,8 @@ function finalize() {
   localStorage.setItem("qty", JSON.stringify(arrQty));
   localStorage.setItem("name", JSON.stringify(arrName));
   localStorage.setItem("price", JSON.stringify(arrPrice));
+  localStorage.setItem("subtotal", arrSum);
+  localStorage.setItem("tax", tax);
+  localStorage.setItem("total", total);
   window.location.href = "page2.html";
 }

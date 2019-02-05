@@ -17,11 +17,23 @@ body {
   text-transform: lowercase;
 }
 
+.qty_title, .name {
+  font-weight: bold;
+}
+
+hr {
+  margin-top: 10px;
+}
+
 #items {
   margin-left: 20px;
   margin-top: 50px;
   height: 90vh;
   width: 75vw;
+}
+
+#description { 
+  padding-bottom: 10px;
 }
 
 #photo0, #photo1, #photo2, #photo3, #photo4, #photo5 {
@@ -81,7 +93,8 @@ body {
 }
 
 .order {
-  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bolder;
 }
 
 .counter {
@@ -167,7 +180,7 @@ button:hover {
 
 .counter {
   margin: 0;
-  width: 50px;
+  width: 40px;
 }
 
 #finalize {
@@ -187,4 +200,5 @@ button:hover {
   font-family: 'Mr Dafoe', cursive;
   color: #3E463E;
   font-size: 40px;
+  text-transform: capitalize;
 }
