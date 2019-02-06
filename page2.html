@@ -2,82 +2,158 @@
 
 <head>
     <link rel="stylesheet" href="restaurant.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Mr+Dafoe" rel="stylesheet">
 </head>
 
 <body>
     <div id="container">
-    <div id="check_final">
-    <table id="final_table">
-        <tr>
-            <th>qty</th>
-            <th>item</th>
-            <th>price</th>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr class="row">
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <div id="check_final">
+            <p id="table_head">Check</p>
+            <table id="final_table">
+                <tr>
+                    <th>qty</th>
+                    <th>item</th>
+                    <th>price</th>
+                </tr>
 
-    </table> 
-</div>
-</div>
+                <tr class="row"> <!--0-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="row"> <!--1-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="row"> <!--2-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="row"> <!--3-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="row"> <!--4-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr class="row"> <!--5-->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">subtotal</th>
+                    <td id="subtotal">$0</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" id="tax_title">tax</td>
+                    <td id="tax">$0</td>
+                </tr>
+
+                <tr id="total_row">
+                    <th colspan="2">total</th>
+                    <td id="total">$0</td>
+                </tr>
+
+                <tr id="tip_row">
+                    <td colspan="2" id="tip_title">tip</td>
+                    <td id="tip_amt">
+                        <p id="dollar">$</p>
+                        <input type="number" id="tip_box" step="1" max="999.99" maxlength="6">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <th>15%</th>
+                    <th>18%</th>
+                    <th>20%</th> 
+                </tr>
+                <tr>
+                    <td id="tip_15"></td>
+                    <td id="tip_18"></td>
+                    <td id="tip_20"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
     
 <script>
-var $ = document;
 
+var $ = document;
+var i;
+
+//Get quantities
 var retrievedQty = localStorage.getItem("qty");
 var qty = JSON.parse(retrievedQty);
 
+//Get item names
 var retrievedName = localStorage.getItem("name");
 var name_string = JSON.parse(retrievedName);
-name_string + '';
-var name = name_string.split(",");
 
+//Get prices
 var retrievedPrice = localStorage.getItem("price");
 var price = JSON.parse(retrievedPrice);
 
+//Get subtotal, tax, and total
+var final_subtotal = localStorage.getItem("subtotal");
+var final_tax = localStorage.getItem("fTax");
+var final_total = localStorage.getItem("fTotal");
+
 function show(){
     for (var i = 0; i < qty.length; i++) {
+        //add qty from array to table
+        var qty_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[0];
+        qty_table.innerHTML = qty[i];
 
-    //add qty from array to table
-    var qty_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[0];
-    qty_table.innerHTML = qty[i];
+        //add name from array to table
+        var name_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[1];
+        var new_name = name_string[i];
+        name_table.innerHTML = new_name;
 
-    //add name from array to table
-    var name_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[1];
-    name_table.innerHTML = name[i];
+        //add price from array to table
+        var price_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[2];
+        price_table.innerHTML = "$" + price[i];
+    }
 
-    //add price from array to table
-    var price_table = $.getElementsByClassName("row")[i].getElementsByTagName('td')[2];
-    price_table.innerHTML = "$" + price[i];
+    //show subtotal, tax, and total
+    var subtotal_table = $.getElementById("subtotal");
+    subtotal_table.innerHTML = "$" + final_subtotal;
+    var tax_table = $.getElementById("tax");
+    tax_table.innerHTML = "$" + final_tax;
+    var total_table = $.getElementById("total");
+    total_table.innerHTML = "$" + final_total;
+
+    //tip
+    var tip_value = $.getElementById("tip_box").value;
     
-}
+    //15%
+    var get_15 = $.getElementById("tip_15");
+    var amt_15 = "$" + (final_total * 0.15).toFixed(2);
+    get_15.innerHTML = amt_15;
+
+    //18%
+    var get_18 = $.getElementById("tip_18");
+    var amt_18 = "$" + (final_total * 0.18).toFixed(2);
+    get_18.innerHTML = amt_18;
+
+    //20%
+    var get_20 = $.getElementById("tip_20");
+    var amt_20 = "$" + (final_total * 0.20).toFixed(2);
+    get_20.innerHTML = amt_20;
 }
 
 show();

@@ -83,8 +83,8 @@ for (var i = 0; i < mydata.food.length; i++) {
 var b;
 var arrSum = 0;
 var sub;
-var tax;
-var total;
+var tax = 0;
+var total = 0;
 
 function order() {
   var qty = $.getElementsByClassName("counter")[b].value;
@@ -128,15 +128,16 @@ function order() {
   subtotal_table.innerHTML = "$" + arrSum;
   
   //tax
-  var tax = (arrSum * 0.04712).toFixed(2);
+  tax = (arrSum * 0.04712).toFixed(2);
   var tax_table = $.getElementById("tax");
   tax_table.innerHTML = "$" + tax;
   }
 
   //total
-  var total = arrSum + parseFloat(tax);
+  total = (arrSum + parseFloat(tax)).toFixed(2);
   var total_table = $.getElementById("total");
   total_table.innerHTML = "$" + total;
+
 }
 
 function order0() {
@@ -198,7 +199,7 @@ function finalize() {
   localStorage.setItem("name", JSON.stringify(arrName));
   localStorage.setItem("price", JSON.stringify(arrPrice));
   localStorage.setItem("subtotal", arrSum);
-  localStorage.setItem("tax", tax);
-  localStorage.setItem("total", total);
+  localStorage.setItem("fTax", tax);
+  localStorage.setItem("fTotal", total);
   window.location.href = "page2.html";
 }

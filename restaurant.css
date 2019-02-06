@@ -107,9 +107,24 @@ hr {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   right: 20px;
-  height: 450px;
-  width: 27vh;
-  padding: 30px;
+  height: 480px;
+  width: 35vh;
+  padding: 20px 30px 30px 30px;
+}
+
+#tip_amt {
+  margin: 0;
+  padding: 0;
+}
+
+#dollar, #tip_box {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+#tip_box {
+  width: 55px;
 }
 
 #check {
@@ -118,13 +133,9 @@ hr {
 
 #check_final {
   margin: auto;
+  margin-top: 5vh;
   position: static;
-}
-
-#container {
-  background-color: blue;
-  width: 100vw;
-  height: 100vh;
+  text-align: center;
 }
 
 #info0, #info1, #info2, #info3, #info4, #info5 {
@@ -156,7 +167,7 @@ tr {
   height: 30px;
 }
 
-#tax_title {
+#tax_title, #tip_title {
   text-align: right;
   padding-right: 15px;
 }
@@ -199,6 +210,11 @@ button:hover {
 #table_head {
   font-family: 'Mr Dafoe', cursive;
   color: #3E463E;
-  font-size: 40px;
+  font-size: 35px;
   text-transform: capitalize;
+}
+
+#tip_amt input[type=number]::-webkit-inner-spin-button, #tip_amt input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
 }
